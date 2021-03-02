@@ -12,10 +12,10 @@ import { Client } from '../shared/client.model';
 })
 export class AddclientComponent implements OnInit {
 
-  constructor(private Clientservice: ClientserviceService,private router:Router,private formBuilder: FormBuilder,private route: ActivatedRoute) { }
-  registerForm: FormGroup;
+  constructor(private Clientservice: ClientserviceService, private FormBuilder:FormBuilder,private router:Router,private route: ActivatedRoute) { }
+   registerForm: any;
   def:any;
-  id: number;
+   id:any;
   employeeIdUpdate = null;  
   submitted = false;
   massage = null;  
@@ -23,6 +23,7 @@ export class AddclientComponent implements OnInit {
 dataSaved = false;
 emp:any;
 form:any;
+kbc:any;
   client =
   {
     ClientName :'',
@@ -36,7 +37,7 @@ form:any;
       debugger;
       this.id = this.route.snapshot.params['id'];
       this.def=this.id
-      this.registerForm = this.formBuilder.group(
+      this.registerForm = this.FormBuilder.group(
         {
           ClientName: ["", Validators.required],
           ClientEmail: ["", [Validators.required, Validators.email]],
@@ -49,7 +50,7 @@ form:any;
 
      // this.refreshEmployeeList();
     }
-    Editclient(def)
+    Editclient(def:any)
     {  debugger
       this.Clientservice.editclient(def).subscribe((res)=>
       {
@@ -76,7 +77,7 @@ form:any;
         this.Clientservice.createEmployee(this.registerForm.value).subscribe(  
           () => {  
             this.dataSaved = true;  
-            this.massage = 'Record saved Successfully';  
+         //   this.massage = 'Record saved Successfully';  
            //  this.refreshEmployeeList(); 
             this.employeeIdUpdate = null;  
             this.router.navigate(['/clientrecord']);
@@ -93,7 +94,7 @@ form:any;
         this.Clientservice.getStudentById(employee).subscribe(() => 
         {  
           this.dataSaved = true;  
-         this.massage = 'Record Updated Successfully';  
+     //    this.massage = 'Record Updated Successfully';  
      //     this.refreshEmployeeList(); 
           this.employeeIdUpdate = null; 
           this.router.navigate(['/clientrecord']);

@@ -8,16 +8,13 @@ import { Router } from "@angular/router";
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
-  // userDetails;
+  userDetails:any;
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
-    debugger;
     this.userService.getUserProfile().subscribe(
-      res => {
-        debugger;
-        console.log(res);
-  //    this.userDetails = res['user'];
+      (res:any) => {
+        this.userDetails = res['user'];
       },
       err => {
         console.log(err);
@@ -26,10 +23,9 @@ export class UserProfileComponent implements OnInit {
     );
   }
 
-  onLogout()
-  {
-  //  this.userService.deleteToken();
-  //  this.router.navigate(['/login']);
+  onLogout(){
+    this.userService.deleteToken();
+    this.router.navigate(['/login']);
   }
 
 }

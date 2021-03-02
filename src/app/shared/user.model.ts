@@ -1,5 +1,12 @@
-export class User {
-    // fullName: string;
-    // email: string; 
-    // password: string;
-}
+
+
+
+export class User {  
+    constructor(  
+        public fullName: string,  
+        public email: string,  
+        public password: string,
+       
+
+    ){}  
+}  

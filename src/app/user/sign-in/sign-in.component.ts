@@ -17,7 +17,7 @@ export class SignInComponent implements OnInit {
     password:''
   };
   emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  //serverErrorMessages: string;
+  serverErrorMessages:any;
 
   ngOnInit() {
     if(this.userService.isLoggedIn())
@@ -32,13 +32,11 @@ export class SignInComponent implements OnInit {
     this.userService.login(form.value).subscribe(
       (res:any) => {
         debugger;
-        
       this.userService.setToken(res['token']);
-     
         this.router.navigateByUrl('/dashboard');
       },
       err => {
-       // this.serverErrorMessages = err.error.message;
+        this.serverErrorMessages = err.error.message;
       }
     );
   }

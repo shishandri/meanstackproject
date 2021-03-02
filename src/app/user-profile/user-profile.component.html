@@ -36,7 +36,7 @@
     </ul>
   </div>
   </div>
-  
+
   <div class="main-content">
     <header>
       <div class="search-wrapper">
@@ -76,7 +76,7 @@
   <a href="">View All</a>
   </div>
   </div>   -->
-  
+
   <!-- <div class="card-single">
     <div class="card-body">
     <span class="ti-checkbox"></span>
@@ -90,7 +90,47 @@
   </div>
   </div>  -->
       <!-- </div>
-    </main> 
+    </main>
   </div>
     -->
-    <app-dashboard></app-dashboard>
+    <!-- <app-dashboard></app-dashboard>  -->
+    <app-my-nav>
+      <body>
+       <div class="container">
+         <h1>Profile</h1>
+       </div>
+      <div class="container-xl">
+        <div class="card">
+   <div class="table-responsive">
+  <table *ngIf="userDetails" class="table">
+    <thead>
+        <tr>
+            <th colspan="2" class="text-center">Profile Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>First Name</td>
+            <td>{{userDetails.fullName.split(' ')[0]}}</td>
+        </tr>
+
+        <tr>
+            <td>Email</td>
+            <td>{{userDetails.email}}</td>
+        </tr>
+        <tr>
+          <td>Active</td>
+          <td>{{userDetails. is_active}}</td>
+      </tr>
+       <tr>
+          <td>Admin</td>
+          <td>{{userDetails. is_admin}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+  </div>
+</div>
+</div>
+</body>
+</app-my-nav>

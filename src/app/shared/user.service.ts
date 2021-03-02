@@ -8,6 +8,8 @@ import { User } from './user.model';
   providedIn: 'root'
 })
 export class UserService {
+
+  
   selectedUser: User = {
     fullName: '',
     email: '',
@@ -29,6 +31,7 @@ export class UserService {
   }
 
   getUserProfile() 
+
   {
     debugger;
     return this.http.get(environment.apiBaseUrl + '/userProfile');

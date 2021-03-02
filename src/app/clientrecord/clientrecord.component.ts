@@ -1,23 +1,49 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { ClientserviceService } from '../shared/clientservice.service';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
  import { NgForm } from "@angular/forms";
+ import { MatPaginator } from '@angular/material/paginator';
+ import { MatTableDataSource } from '@angular/material/table';
  import { Router } from "@angular/router";
 import { Client } from '../shared/client.model';
+import { map } from 'rxjs/operators';
+import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 @Component({
   selector: 'app-clientrecord',
   templateUrl: './clientrecord.component.html',
   styleUrls: ['./clientrecord.component.css']
 })
 export class ClientrecordComponent implements OnInit
- {
+ {  StudentData: any = [];
+  // dataSource: MatTableDataSource<Client>;
+ // @ViewChild(MatPaginator) paginator: MatPaginator; 
+//   displayedColumns: string[] = [ 'ClientName', 'ClientEmail', 'ClientSkype', 'ServerDetail'];
+//     cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
+//   map(({ matches }) => {
+//     if (matches) {
+//       return [
+//         { title: 'Client Detail', cols: 1, rows: 1 },
+//         // { title: 'Card 2', cols: 1, rows: 1 },
+     
+//       ];
+//     }
 
-  constructor(private Clientservice: ClientserviceService,private router:Router,private formBuilder: FormBuilder) { }
-//  registerForm: FormGroup;
-  employeeIdUpdate = null;  
+//     return [
+//       { title: 'Client Detail', cols: 2, rows: 1 },
+//       // { title: 'Card 2', cols: 1, rows: 1 },
+//     ];
+//   })
+// );
+
+
+  constructor(private Clientservice: ClientserviceService,private router:Router,private formBuilder: FormBuilder,private breakpointObserver: BreakpointObserver) { }
+ registerForm: any;
+  employeeIdUpdate = null;
+
   submitted = false;
   massage = null;  
   abc:any;
+ // dataSource:any;
 dataSaved = false;
 emp:any;
 form:any;
@@ -78,7 +104,13 @@ form:any;
        this.Clientservice.getEmployeeList().subscribe((res)=>
        {
          debugger;
-          this.abc=res;
+      //   this.StudentData = res;
+        this.abc=res;
+      //    this.dataSource = new MatTableDataSource<Client>(this.StudentData);
+      //    setTimeout(() => {
+      //   //   this.dataSource.paginator = this.paginator;
+      // }, 0);
+     //  this.dataSource =res;
        })
      }    
 }

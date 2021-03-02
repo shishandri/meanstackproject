@@ -1,4 +1,4 @@
-/* .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+/* /* .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     width: 100%;
     padding-right: var(--bs-gutter-x,.75rem);
     padding-left: var(--bs-gutter-x,.75rem);
@@ -28,8 +28,10 @@
     border-radius: .25rem;
 } */
 
-
-.divcontainer
+table {
+    width: 100%;
+  }
+/* .divcontainer
 {
 background-color:#f8f9fa!important
 } 
@@ -39,7 +41,7 @@ background-color:#f8f9fa!important
     border: none;
     color: white;
     padding: 9px 26px;
-    margin:63px -3px -25px 1187px;
+    margin:63px -3px -25px;
     border-radius: 5px 5px 5px 5px;
 }
 
@@ -147,37 +149,79 @@ p{
 font-family:'Circular-Loom';
 font-size:large;
 color:black
-}
-label
-{
-    margin-top:47px;
-}
-.btn-primary
+} */
+
+/* .btn-primary
 {
     margin:22px 8px 2px 376px;
     background-color:#5fbae9;
     border-color:#5fbae9;
+} */
+
+/* .container-fluid
+{
+    align-items:right
+} */
+.card {
+    /* margin-bottom: 24px; */
+    box-shadow: 0 0 0.875rem 0 rgb(41 48 66 / 5%);
+}
+.card {
+    border:0 solid transparent;
+    /* position: relative; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* min-width: 0; */
+    /* word-wrap: break-word; */
+    background-color: #fff;
+    /* background-clip: border-box; */
+    /* border: 0 solid transparent; */
+    /* border-radius: .25rem; */
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #3f80ea;
+    border-color: #3f80ea;
+    margin:0 0px 11px 883px;
 }
 .table-responsive
 {  border: solid #f8f9fa;
-    border-width: .2rem 32px  0;
-    margin:30px 33px 70px 273px;
+    /* border-width: .2rem 32px  0; */
+    /* margin:30px 33px 70px 273px; */
     background-color:white;
-    box-shadow:0 0 0.875rem 0 rgb(41 48 66 / 5%);
-}
+    box-shadow: 0 0 0.875rem 0 rgb(41 48 66 / 5%)
+} 
 .cell-breakWord {
     word-wrap: break-word;
     max-width: 1px;
  }
-
+ .btn-outline-primary {
+    color: #007bff;
+    background-color: transparent;
+    background-image: none;
+    border-color: #007bff;
+}
  th
  {
-     font-size:large
- }  
- .container, .container-lg, .container-md, .container-sm, .container-xl
- {  background-color:white;
-     max-width:778px;
-     margin-top:29px;
-     height:705px;
-     box-shadow: 0 5px 10px 0 rgb(0 0 0 / 30%);
- }
+     font-size:small
+ } 
+ body{
+    background-color: #F7F9FE;
+ } 
+
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 1006px)
+{
+.container {
+    width: 1006px;
+}
+}
+

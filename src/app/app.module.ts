@@ -1,6 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
@@ -12,11 +10,29 @@ import { UserService } from './shared/user.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
-import { AuthGuard } from './guards/auth.guard';   
+import { AuthGuard } from './guards/auth.guard';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';  
 import { AuthInterceptor } from './guards/auth.interceptor';
 import { ClientrecordComponent } from './clientrecord/clientrecord.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AddclientComponent } from './addclient/addclient.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import { MatToolbarModule} from  '@angular/material/toolbar';
+import { MatSidenavModule} from  '@angular/material/sidenav';
+import { MatListModule} from  '@angular/material/list';
+import { MatIconModule} from  '@angular/material/icon';
+import { BrowserModule } from '@angular/platform-browser';
+import { MyNavComponent } from './my-nav/my-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import {MatTableModule} from '@angular/material/table';
+import { DashComponent } from './dash/dash.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { LogoutComponent } from './logout/logout.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,8 +42,15 @@ import { AddclientComponent } from './addclient/addclient.component';
     SignInComponent,
     ClientrecordComponent,
     AddclientComponent,
+    DashboardComponent,
+    MyNavComponent,
+    DashComponent,
+    LogoutComponent,
+   
   ],
   imports: [
+     MatInputModule, MatButtonModule,
+     MatTableModule,
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
@@ -35,9 +58,23 @@ import { AddclientComponent } from './addclient/addclient.component';
     FormsModule,
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+     MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatButtonModule,
+    MatIconModule,
+    LayoutModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule
   ],
-  providers: [AuthGuard,UserService],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  },AuthGuard,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

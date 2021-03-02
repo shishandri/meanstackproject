@@ -1,4 +1,4 @@
-
+/* 
  @import url('http://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;&display=swap');
  :root{
      --main-color:#293042;
@@ -65,13 +65,13 @@
     display:none;
     margin-left:60px;
 /* // text-align:center; */
-}
-#sidebar-toogle:checked ~.sidebar .sidebar-header,
+/* } */
+/* #sidebar-toogle:checked ~.sidebar .sidebar-header,
 #sidebar-toogle:checked ~ .sidebar li {
    display:flex;
    justify-content:center;
 /* // text-align:center; */
-}
+/* }
 #sidebar-toogle:checked ~ .main-content
 {
     margin-left:60px;
@@ -80,7 +80,7 @@
 // {
 //     left:60px;
 // } */
-.main-content
+/* .main-content
 {
     position:relative;
     margin-left:240px;
@@ -129,7 +129,7 @@ background-size:cover;
 background-repeat: no-repeat;
 border-radius:50%
 /* background-image:url(img/1.jpg) */
-}
+/* }
 .search-wrapper input
 {
 border:0;
@@ -167,8 +167,8 @@ height:38px;
     font-size:1.5rem;
     color:#777;
     padding-right:1rem;
-}
-.card-body h5
+} */
+/* .card-body h5
 {
     color:#293042;
     font-size:1rem;
@@ -188,14 +188,14 @@ height:38px;
 #sidebar-toogle
 {
     display:none;
-}
+}  */
 
-.card-footer a
+/* .card-footer a
 {
     color:green;
 }
-.activity-grid
-{
+.activity-grid  */
+/* {
   display:grid;
   grid-template-columns: 75% 25%;
   grid-column-gap:1.5rem;  
@@ -210,4 +210,58 @@ height:38px;
     .sidebar{
         width:60px;
     }
+}  */ 
+/* .card-columns
+ {
+    @include media-breakpoint-only(lg) {
+      column-count: 4;
+    }
+
+    @include media-breakpoint-only(xl) {
+      column-count: 5;
+    }
+  } */
+
+  /* @media screen and (max-width:768px) {
+    card {
+        width:100%;
+
+    } 
+ .card{
+        max-width:50%;
+        width: 50%;
+ } 
+ }   
+
+.card {
+    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+}         */
+/* .container-xl
+{
+    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+}  */
+body{
+    background-color: #F7F9FE;
+ }
+h2
+{
+    color:#153352
+}
+
+
+.card {
+    /* margin-bottom: 24px; */
+    box-shadow: 0 0 0.875rem 0 rgb(41 48 66 / 5%);
+}
+.card {
+    border:0 solid transparent;
+    /* position: relative; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* min-width: 0; */
+    /* word-wrap: break-word; */
+    background-color: #fff;
+    /* background-clip: border-box; */
+    /* border: 0 solid transparent; */
+    /* border-radius: .25rem; */
 }
